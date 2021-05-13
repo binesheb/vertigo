@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Changing Hostname"
 sudo hostnamectl
-sudo hostnamectl set-hostname 'wified'
+sudo hostnamectl set-hostname 'vertigo'
 sudo hostnamectl
 timedatectl set-timezone Asia/Kolkata
 sleep 3
