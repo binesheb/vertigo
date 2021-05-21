@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Enabling WiFi Feature"
+sudo bash set_wpa.sh
 sudo mv /boot/vertigo/wpa_supplicant.conf /boot
 sudo cp /boot/wpa_supplicant.conf /etc/wpa_supplicant/ -r
 echo "WIFI Service enabled (requires reboot)"

@@ -3,8 +3,6 @@ echo "Enable LCD Display 3.5inch touch"
 sleep 1
 sudo grep -qxF 'dtoverlay=piscreen2r' /boot/config.txt || echo 'dtoverlay=piscreen2r' >> /boot/config.txt
 sudo grep -qxF 'arm_freq=1200' /boot/config.txt || echo 'arm_freq=1200' >> boot/config.txt
-sudo grep -qxF 'dtoverlay=piscreen2r' /boot/config.txt || echo 'dtoverlay=piscreen2r' >> /boot/config.txt
-sudo grep -qxF 'dtoverlay=piscreen2r' /boot/config.txt || echo 'dtoverlay=piscreen2r' >> /boot/config.txt
 #sudo reboot
 sudo apt-get install fbi -y --fix-missing
 sudo apt-get install mplayer -y
