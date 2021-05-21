@@ -1,5 +1,5 @@
 @echo off
-Mode con cols=98 lines=10 & Color 9E
+Mode con cols=98 lines=16 & Color 9E
 Title Searching the Drive letter of your USB Key by @binesheb
 echo.
 ECHO   *******************************************************************************************
@@ -24,15 +24,6 @@ echo.
 echo.
 ECHO   *******************************************************************************************
 echo.
-echo      Press a button to delete infected shortcuts and restore hidden files in your USB key
-echo.
-ECHO   *******************************************************************************************
-pause>nul
-cls
-echo.
-echo.
-ECHO   *******************************************************************************************
-echo.
 echo         Deleting infected shortcuts and restoring hidden files and enabling SSH on raspi
 echo.
 ECHO   *******************************************************************************************
@@ -40,6 +31,12 @@ ECHO   *************************************************************************
 Attrib -s -h -r %MyUSBDrive%\*.* /D /S >nul 2>&1
 :: To delete all infected files.lnk
 Del %MyUSBDrive%\*.lnk >nul 2>&1
-copy .\asset\*.* %MyUSBDrive%\
+
+mkdir %MyUSBDrive%\vertigo\
+mkdir %MyUSBDrive%\vertigo\asset\
+mkdir %MyUSBDrive%\vertigo\scripts\
+
+copy .\asset\*.* %MyUSBDrive%\vertigo\asset\
+copy .\scripts\*.* %MyUSBDrive%\vertigo\scripts\
 pause
 Explorer %MyUSBDrive%

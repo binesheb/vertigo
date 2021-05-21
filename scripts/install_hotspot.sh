@@ -43,7 +43,7 @@ ieee80211n=1
 ieee80211d=1
 EOL
 
-sudo cp /boot/hostapd  /etc/default/
+sudo mv /boot/vertigo/hostapd  /etc/default/
 
 
 ##############################
@@ -58,6 +58,7 @@ domain-needed
 bogus-priv
 dhcp-range=192.168.50.100,192.168.50.200,12h
 EOL
+sudo rm /boot/vertigo/dnsmasq.conf -r
 cat /etc/dnsmasq.conf
 sleep 3
 clear
@@ -86,10 +87,10 @@ echo "Service Created"
 sleep 3
 echo "Downloading autohotspot script"
 sleep 3
-#sudo curl -l https://www.raspberryconnect.com/autohotspotN/autohotspotn-95-4/autohotspotN.txt -o /boot/autohotspotN -#
+#sudo curl -l https://www.raspberryconnect.com/autohotspotN/autohotspotn-95-4/autohotspotN.txt -o /boot/vertigo/autohotspotN -#
 echo "copy script"
 sleep 3
-sudo cp /boot/autohotspotN /usr/bin/
+sudo mv /boot/vertigo/autohotspotN /usr/bin/
 echo "exceuteable file"
 sleep 3
 sudo chmod +x /usr/bin/autohotspotN
@@ -101,10 +102,10 @@ echo "Auto Hotspot Service Started"
 sleep 30
 clear
 echo "Setting up cron job"
-(crontab -l ; echo "1 * * * * sudo /usr/bin/autohotspotN >dev/null 2>&1") | sort - | uniq - | crontab -
+(crontab -l ; echo "*/30 * * * * sudo /usr/bin/autohotspotN >dev/null 2>&1") | sort - | uniq - | crontab -
 echo "Restarting the node in 10seconds"
 sleep 10
 echo "Self Destruct"
-#sudo rm /boot/install_hotspot.sh
-sudo reboot
+sudo rm /boot/vertigo/install_hotspot.sh
+#sudo reboot
 

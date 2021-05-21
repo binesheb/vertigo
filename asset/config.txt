@@ -40,7 +40,7 @@
 #sdtv_mode=2
 
 #uncomment to overclock the arm. 700 MHz is the default.
-arm_freq=1200
+#arm_freq=800
 
 # Uncomment some or all of these to enable the optional hardware interfaces
 #dtparam=i2c_arm=on
@@ -58,10 +58,17 @@ dtparam=audio=on
 
 [pi4]
 # Enable DRM VC4 V3D driver on top of the dispmanx display stack
-dtoverlay=vc4-fkms-v3d
-max_framebuffers=2
+#dtoverlay=vc4-fkms-v3d
+#max_framebuffers=2
 
 [all]
 #dtoverlay=vc4-fkms-v3d
-
-gpu_mem=128
+dtoverlay=piscreen2r
+avoid_warnings=2
+max_usb_current=1
+program_usb_boot_mode=1
+arm_freq=1200
+avoid_warnings=2
+max_usb_current=1
+program_usb_boot_mode=1
+arm_freq=1200
