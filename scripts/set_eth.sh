@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Configuring Ethernet Port for DNS Server"
 sleep 1
-echo "Setting up Ethernet Port IP to 192.168.29.29/24"
+echo "Setting up Ethernet Port IP to 192.168.29.30/24"
 mv /boot/dhcpcd.conf /etc/
 echo "Successfully Changed IP Address"
 sudo service dhcpcd status

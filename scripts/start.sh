@@ -40,7 +40,7 @@ sudo mkdir /boot/vertigo
 #sleep 2
 
 clear
-#identify the script file
+#identify the script file location
 echo "Identifying the source folder"
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
@@ -71,6 +71,7 @@ echo "Listing files in Folder to confirm"
 sleep 1
 ls
 sleep 3
+
 echo "Copy all the base files to /boot/vertigo"
 sudo ls /boot/vertigo/
 sleep 2
