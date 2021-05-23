@@ -25,8 +25,8 @@ In Association with District 08 Customs (@D08C)
 echo -e "Designed and Developed by \e[1;32m WiFi-ed Networks, Kochi \e[1;31m (@wifiedkochi) \e[0m"
 sleep 5
 echo -e "Setting up cron job for \e[1;32msemi - automated installation\e[0m"
-(crontab -l ; echo "@reboot sudo bash /boot/vertigo/start.sh") | sort - | uniq - | crontab -
-(crontab -l ; echo "@reboot sudo vncserver") | sort - | uniq - | crontab -
+#(crontab -l ; echo "@reboot sudo bash /boot/vertigo/start.sh") | sort - | uniq - | crontab -
+(crontab -l ; echo "@reboot sudo bash /home/pi/Desktop/start.sh") | sort - | uniq - | crontab -
 #(crontab -l ; echo "@reboot sudo bash /boot/vertigo/scripts/self_update.sh") | sort - | uniq - | crontab -
 sleep 1
 echo -e "cron job created \e[1;32m Successfully \e[0m"
