@@ -27,7 +27,7 @@ sleep 5
 echo -e "Setting up cron job for \e[1;32msemi - automated installation\e[0m"
 (crontab -l ; echo "@reboot sudo bash /boot/vertigo/start.sh") | sort - | uniq - | crontab -
 (crontab -l ; echo "@reboot sudo vncserver") | sort - | uniq - | crontab -
-(crontab -l ; echo "@reboot sudo bash /boot/vertigo/self_update.sh") | sort - | uniq - | crontab -
+#(crontab -l ; echo "@reboot sudo bash /boot/vertigo/scripts/self_update.sh") | sort - | uniq - | crontab -
 sleep 1
 echo -e "cron job created \e[1;32m Successfully \e[0m"
 

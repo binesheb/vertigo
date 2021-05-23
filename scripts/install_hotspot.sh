@@ -36,8 +36,6 @@ wpa_passphrase=vertigo123
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=CCMP TKIP
 rsn_pairwise=CCMP
-
-#80211n - Change GB to your WiFi country code
 country_code=IN
 ieee80211n=1
 ieee80211d=1
@@ -106,6 +104,6 @@ echo "Setting up cron job"
 echo "Restarting the node in 10seconds"
 sleep 10
 echo "Self Destruct"
-sudo rm /boot/vertigo/install_hotspot.sh
+#sudo rm /boot/vertigo/scripts/install_hotspot.sh
 #sudo reboot
 

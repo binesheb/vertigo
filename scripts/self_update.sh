@@ -31,7 +31,7 @@ echo "Checking Source Folder"
 pwd
 echo "Listing files in Folder to confirm"
 sleep 1
-ls
+tree
 sleep 3
 
 echo "Removing Old Files"
