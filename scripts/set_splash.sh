@@ -2,7 +2,7 @@
 splash_location='/usr/share/plymouth/themes/pix/'
 cd $splash_location
 sleep 1
-sudo mv /boot/vertigo/vertigo_beta.png ./
+sudo mv /boot/vertigo/asset/vertigo_beta.png ./
 sleep 3
 sudo mv ./vertigo_beta.png ./splash.png
 sleep 3
@@ -14,6 +14,6 @@ sleep 3
 #pcmanfm --set-wallpaper ./wall.png
 #sudo rm -r ./vertigo/
 echo "Self Destruct - Set Splash"
-sudo rm -r /boot/vertigo/set_splash.sh
+#sudo rm -r /boot/vertigo/scripts/set_splash.sh
 #exit code
 exit 0
