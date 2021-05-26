@@ -12,7 +12,7 @@ sleep 2
 sudo apt-get upgrade -y
 sleep 3
 echo "Self Destruct"
-sudo rm /boot/vertigo/scripts/upgrade_os.sh
+#sudo rm /boot/vertigo/scripts/upgrade_os.sh
 echo "Rebooting device after upgradation"
 sleep 1
 echo "Rebooting in 5seconds"

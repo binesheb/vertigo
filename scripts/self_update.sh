@@ -34,6 +34,12 @@ sleep 1
 tree
 sleep 3
 
+while ! ping -c 1 -W 1 1.1.1.1; do
+echo "Internet not connected"
+sleep 1
+done
+sudo cp /boot/vertigo/scripts/self_update.sh /boot/self_update_git.sh
+cd ~
 echo "Removing Old Files"
 sudo rm -r vertigo
 echo "Removed"
