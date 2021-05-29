@@ -2,38 +2,7 @@
 echo "Initiating Self Heal Process"
 sleep 3
 clear
-#identify the script file location
-echo "Identifying the source folder"
-SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-  TARGET="$(readlink "$SOURCE")"
-  if [[ $TARGET == /* ]]; then
-    echo "SOURCE '$SOURCE' is an absolute symlink to '$TARGET'"
-    SOURCE="$TARGET"
-  else
-    DIR="$( dirname "$SOURCE" )"
-    echo "SOURCE '$SOURCE' is a relative symlink to '$TARGET' (relative to '$DIR')"
-    SOURCE="$DIR/$TARGET" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-  fi
-done
-echo "SOURCE is '$SOURCE'"
-RDIR="$( dirname "$SOURCE" )"
-DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
-if [ "$DIR" != "$RDIR" ]; then
-  echo "DIR '$RDIR' resolves to '$DIR'"
-fi
-echo "DIR is '$DIR'"
-sleep 1
-echo "Switching to Source Folder"
-cd $DIR
-sleep 1
-echo "Checking Source Folder"
-pwd
-echo "Listing files in Folder to confirm"
-sleep 1
-tree
-sleep 3
-
+#check for internet connection
 while ! ping -c 1 -W 1 1.1.1.1; do
 echo "Internet not connected"
 sleep 1
