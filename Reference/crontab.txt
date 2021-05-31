@@ -9,3 +9,5 @@ crontab -u mobman -l | grep -v 'perl /home/mobman/test.pl'  | crontab -u mobman 
 Remove everything from crontab:
 
 crontab -r
+asdad
+

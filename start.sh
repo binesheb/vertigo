@@ -40,7 +40,8 @@ sudo mkdir /boot/vertigo
 #sleep 2
 
 clear
-#identify the script file location
+
+#identify the location of the script file
 echo "Identifying the source folder"
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink

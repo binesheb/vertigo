@@ -68,7 +68,3 @@ avoid_warnings=2
 max_usb_current=1
 program_usb_boot_mode=1
 arm_freq=1200
-avoid_warnings=2
-max_usb_current=1
-program_usb_boot_mode=1
-arm_freq=1200
