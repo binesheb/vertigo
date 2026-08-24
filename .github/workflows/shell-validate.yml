@@ -1,0 +1,27 @@
+name: Shell validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.sh'
+      - '.github/workflows/shell-validate.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.sh'
+      - '.github/workflows/shell-validate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  bash-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate shell syntax
+        run: |
+          while IFS= read -r -d '' script; do
+            bash -n "$script"
+          done < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
