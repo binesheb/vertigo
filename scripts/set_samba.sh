@@ -15,9 +15,10 @@ public = yes
 guest ok = yes
 
 
-#reset Samba Password
-sudo smbpasswd -a <username>
-#restart Samba server
+# Reset Samba password interactively.
+# Replace USERNAME with the intended local account before running this script.
+sudo smbpasswd -a USERNAME
+# Restart Samba server
 sudo /etc/init.d/samba restart
 
 exit
