@@ -18,6 +18,13 @@ if [[ -d "$STAGING" || -d "$BACKUP" ]]; then
   exit 1
 fi
 
+if [[ -d "$TARGET/.git" ]]; then
+  if [[ -n "$(git -C "$TARGET" status --porcelain)" ]]; then
+    echo "Local changes detected in $TARGET; commit, stash, or back up them before updating." >&2
+    exit 1
+  fi
+fi
+
 echo "Checking origin/$BRANCH for an update..."
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT
