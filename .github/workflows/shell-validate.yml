@@ -33,6 +33,8 @@ jobs:
       - name: Validate updater safety invariants
         run: |
           updater="scripts/self_update.sh"
+          test -x "$updater"
+          grep -Fq '#!/usr/bin/env bash' "$updater"
           grep -Fq 'git -C "$TARGET" status --porcelain' "$updater"
           grep -Fq 'commit, stash, or back up them before updating.' "$updater"
           grep -Fq 'CURRENT="$(git -C "$TARGET" rev-parse HEAD 2>/dev/null || true)"' "$updater"
