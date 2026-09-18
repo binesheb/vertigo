@@ -10,6 +10,11 @@ The project follows [Semantic Versioning](https://semver.org/).
 
 - Prevented the legacy updater from replacing an installation that contains uncommitted or untracked local changes.
 
+### Added
+
+- Added CI coverage for updater executable/interpreter requirements and safety invariants.
+- Added bounded shell-script validation in CI so malformed or unexpectedly hanging validation cannot consume an unbounded workflow run.
+
 ## [0.1.2] - 2026-08-21
 
 ### Fixed
