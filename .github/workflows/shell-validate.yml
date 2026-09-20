@@ -30,8 +30,10 @@ jobs:
           while IFS= read -r -d '' script; do
             bash -n "$script"
           done < <(find . -type f -name '*.sh' -not -path './.git/*' -print0)
-      - name: Validate updater safety invariants
+      - name: Validate entry point and updater invariants
         run: |
+          test -x "start.sh"
+          grep -Fq '#!/usr/bin/env bash' "start.sh"
           updater="scripts/self_update.sh"
           test -x "$updater"
           grep -Fq '#!/usr/bin/env bash' "$updater"
