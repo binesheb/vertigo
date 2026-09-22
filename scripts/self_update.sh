@@ -7,6 +7,7 @@ BRANCH="main"
 TARGET="/boot/vertigo"
 STAGING="${TARGET}.update-staging"
 BACKUP="${TARGET}.update-backup"
+CHECK_ONLY="${CHECK_ONLY:-0}"
 
 if [[ ! -d "$TARGET" ]]; then
   echo "Vertigo installation not found at $TARGET" >&2
@@ -51,6 +52,11 @@ done
 while IFS= read -r -d '' script; do
   bash -n "$script"
 done < <(find "$TMP_DIR/vertigo" -type f -name '*.sh' -print0)
+
+if [[ "$CHECK_ONLY" == "1" ]]; then
+  echo "Validation completed successfully; CHECK_ONLY=1 so the installed copy was not changed."
+  exit 0
+fi
 
 # Preserve local configuration outside the replacement operation when present.
 if [[ -d "$TARGET/config" ]]; then
