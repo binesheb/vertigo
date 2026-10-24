@@ -2,7 +2,6 @@ name: Shell validation
 
 on:
   push:
-    branches: [main]
     paths:
       - '**/*.sh'
       - '.github/workflows/shell-validate.yml'
@@ -33,7 +32,7 @@ jobs:
       - name: Validate entry point and updater invariants
         run: |
           test -x "start.sh"
-          grep -Fq '#!/usr/bin/env bash' "start.sh"
+          grep -Eq '^#!/(usr/bin/env bash|bin/bash)$' "start.sh"
           updater="scripts/self_update.sh"
           test -x "$updater"
           grep -Fq '#!/usr/bin/env bash' "$updater"
