@@ -2,7 +2,6 @@ name: Shell validation
 
 on:
   push:
-    branches: [main]
     paths:
       - '**/*.sh'
       - '.github/workflows/shell-validate.yml'
